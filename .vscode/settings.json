@@ -1,0 +1,8 @@
+{
+    "remote.portsAttributes": {
+    
+    }
+    "editor.tokenColorCustomizations": {
+        "comments": "#ffc2c2"
+    }
+}
