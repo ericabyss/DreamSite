@@ -25,15 +25,20 @@
                     <a href="#">Erica</a>
                 </div>
                 <div class="navbar__menu">
-                <ul class="navbar__menu">
-                    <li class="navbar__menu__item  active">Home</li>
-                    <li class="navbar__menu__item">About</li>
-                    <li class="navbar__menu__item">Skills</li>
-                    <li class="navbar__menu__item">My work</li>
-                    <li class="navbar__menu__item">Testimonials</li>
-                    <li class="navbar__menu__item">Contact</li>
-                </ul>
+                    <ul class="navbar__menu">
+                        <li class="navbar__menu__item  active">Home</li>
+                        <li class="navbar__menu__item">About</li>
+                        <li class="navbar__menu__item">Skills</li>
+                        <li class="navbar__menu__item">My work</li>
+                        <li class="navbar__menu__item">Testimonials</li>
+                        <li class="navbar__menu__item">Contact</li>
+                    </ul>
                 </div>
+
+                <!-- Toggle button -->
+                <button class="navbar__toggle-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
 
             <!-- Home -->
@@ -195,7 +200,8 @@
             </section>
 
             <!-- Work -->
-            <section id="work" class="section section__container">
+            <section id="work" class="section">
+                <div class="section__container">
                 <h1>My work</h1>
                 <h3>Projects</h3>
                 <div class="work__categories">
@@ -274,36 +280,39 @@
                     </div>
                     </a>
                 </div>
-
+            </div>
             </section>
 
             <!-- Testimonials -->
             <section id="testimonials" class="section">
-                <h1>Testimonials</h1>
-                <h3>See what they say about me</h3>
-                <div class="testimonials">
-                    <div class="testimonial">
-                        <img
+                <div class="section__container">
+                    <h1>Testimonials</h1>
+                    <h3>See what they say about me</h3>
+                    <div class="testimonials">
+                        <div class="testimonial">
+                            <img
+                                src="imgs/testimonial/goyounghee.jpg"
+                                alt="People"
+                                class="testimonial__avatar"
+                            />
+                            <div class="testimonial__speech-bubble">
+                                <p>나에대해 뭐라고 했는지dddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                                <p class="name"><a href="">Goyounghee</a> / Samsung</p>
+                            </div>
+                        </div>
+                        <div class="testimonial">
+    
+                            <div class="testimonial__speech-bubble">
+                                <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+                                    ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss아s무말</p>
+                                <p class="name"><a href="https://github.com/ericabyss">Goyounghee</a> / Samsung</p>
+                            </div>
+                            <img
                             src="imgs/testimonial/goyounghee.jpg"
                             alt="People"
                             class="testimonial__avatar"
                         />
-                        <div class="testimonial__speech-bubble">
-                            <p>나에대해 뭐라고 했는지</p>
-                            <p class="name"><a href="">Goyounghee</a> / Samsung</p>
                         </div>
-                    </div>
-                    <div class="testimonial">
-
-                        <div class="testimonial__speech-bubble">
-                            <p>sssssssssssssssss아무말</p>
-                            <p class="name"><a href="https://github.com/ericabyss">Goyounghee</a> / Samsung</p>
-                        </div>
-                        <img
-                        src="imgs/testimonial/goyounghee.jpg"
-                        alt="People"
-                        class="testimonial__avatar"
-                    />
                     </div>
                 </div>
             </section>

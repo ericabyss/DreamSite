@@ -73,7 +73,7 @@ h1 {
 }
 
 h2 {
-  font-size: var(--font-regular);
+  font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
   color: var(--color-black);
   margin: 8px 0;
@@ -123,6 +123,15 @@ p {
 }
 .navbar__menu__item:hover {
   background-color: var(--color-dark-pink);
+}
+
+.navbar__toggle-btn {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  display: none;
 }
 
 /* Home */
@@ -283,7 +292,6 @@ p {
   padding: 20px;
 }
 
-
 /* Work */
 .work__categories {
   margin: 40px;
@@ -305,7 +313,7 @@ p {
 .category__btn.active .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top :0;
+  top: 0;
 }
 
 .category__count {
@@ -337,7 +345,7 @@ p {
   width: 280px;
   height: 250px;
   margin: 2px;
-  background-color:var(--color-light-white);
+  background-color: var(--color-light-white);
 }
 
 .project__img {
@@ -365,21 +373,20 @@ p {
   transform: translateY(0);
 }
 
-.project__description h3{
+.project__description h3 {
   color: var(--color-white);
 }
 
 .project__description h3:after {
-  content: '';
+  content: "";
   display: block;
   position: relative;
-  left:50%;
+  left: 50%;
   margin-left: -12px;
   margin-top: 8px;
   width: 25px;
   height: 2px;
   background-color: var(--color-dark-white);
-
 }
 
 /* Testimonials */
@@ -400,11 +407,74 @@ p {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin: 11px;
+}
+
+.testimonial__avatar:nth-child(odd) {
+  margin-right: 40px;
+}
+
+.testimonial__avatar:nth-child(even) {
+  margin-left: 40px;
 }
 
 .testimonial__speech-bubble {
   padding: 18px;
   background-color: var(--color-white);
   border-radius: var(--size-border-radius);
+}
+
+.testimonial__speech-bubble p {
+  color: var(--color-light-grey);
+}
+
+.testimonial__speech-bubble a {
+  color: var(--color-pink);
+}
+
+/* Contact */
+#coontact {
+  background-color: var(--color-pink);
+}
+
+.contact__title,
+.contact__email,
+.contact__rights {
+  color: var(--color-white);
+}
+
+.contact__title {
+  margin: 32px 0;
+}
+
+.contact__links {
+  font-size: var(--font-large);
+  margin: 24px 0;
+}
+
+.contact__links i {
+  transition: all var(--animation-duration) ease-in;
+}
+
+.contact__links i:hover {
+  transform: scale(1.1);
+  color: var(--color-yellow);
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
 }
