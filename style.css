@@ -397,7 +397,7 @@ p {
 }
 
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
@@ -405,10 +405,10 @@ p {
   display: block;
   position: relative;
   left: 50%;
-  margin-left: -12px;
-  margin-top: 8px;
-  width: 25px;
+  width: 50px;
   height: 2px;
+  transform: translateX(-50%);
+  margin-top: 8px;
   background-color: var(--color-dark-white);
 }
 
@@ -514,6 +514,11 @@ p {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-pink);
+  }
+
+  #navbar.navbar--dark {
+    padding: 16px;
   }
 
   .navbar__menu {
