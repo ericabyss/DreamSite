@@ -90,10 +90,7 @@ workBtnContainer.addEventListener('click', (e) => {
 
 });
 
-function scrollIntoView(selector) {
-    const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior:'smooth'});
-}
+
 
 // 1. 모든 섹션 요소들과 메뉴 아이템들을 가지고 온다.
 // 2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다.
@@ -119,6 +116,12 @@ function selectNavItem(selected) {
     selectedNavItem.classList.remove('active');
     selectedNavItem = selected;
     selectedNavItem.classList.add('active');
+}
+
+function scrollIntoView(selector) {//section의 id가 인자로 전달
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior:'smooth'});
+    selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
 
 const observerOptions = {
@@ -151,4 +154,5 @@ window.addEventListener('wheel', () => { //스크롤 위치가 제일 위 or 아
     } else if (window.scrollY + window.innerHeight === document.body.clientHeight) {
         selectedNavIndex = navItems.length-1;
     }
-    selectNavItem(navItems[selectedNavIndex]); //중간
+    selectNavItem(navItems[selectedNavIndex]);//중간
+});
