@@ -112,6 +112,15 @@ const navItems = sectionIds.map(id =>
     document.querySelector(`[data-link="${id}"]`)
 );
 
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0];
+
+function selectNavItem(selected) {
+    selectedNavItem.classList.remove('active');
+    selectedNavItem = selected;
+    selectedNavItem.classList.add('active');
+}
+
 const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -120,11 +129,19 @@ const observerOptions = {
 
 const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
-            if(!entry.isIntersecting) {
+            if (!entry.isIntersecting && entry.intersectionRatio > 0) {
                 const index = sectionIds.indexOf(`#${entry.target.id}`);
-                console.log(index,entry.target.id);
+                // 스크롤링이 아래로 되어서 페이지가 올라옴.
+                //다음에 할당되는 index를 selectedIndex로 할당함
+                if (entry.boundingClientRect.y < 0) {
+                    selectedNavIndex = index + 1;
+                } else {
+                    selectedNavIndex = index - 1;
+                }
+
             }
         });
     };
+
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 sections.forEach(section => observer.observe(section));
