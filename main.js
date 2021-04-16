@@ -13,7 +13,7 @@ document.addEventListener('scroll', () => {
 
 // Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar__menu');
-navbarMenu.addEventListener('click', (event) => {
+navbarMenu.addEventListener('click', event => {
     console.log(event.target.dataset.link);
     const target = event.target;
     const link = target.dataset.link;
@@ -22,6 +22,7 @@ navbarMenu.addEventListener('click', (event) => {
     }
     navbarMenu.classList.remove('open');
     scrollIntoView(link);
+    selectNavItem(target);
 }); 
 
 // Navbar toggle button for small screen
@@ -98,7 +99,7 @@ function scrollIntoView(selector) {
 // 2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다.
 // 3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 한다.
 
-const sectionIds = [
+const sectionIds = [//사용된 모든 id를 문자열로 배열로 저장
     '#home',
     '#about',
     '#skills',
@@ -107,14 +108,13 @@ const sectionIds = [
     '#contact'
 ];
 
-const sections = sectionIds.map(id => document.querySelector(id));
+const sections = sectionIds.map(id => document.querySelector(id)); //그것을 이용해서 모든 section요소들을 sections라는 배열에 할당해둠
 const navItems = sectionIds.map(id => 
     document.querySelector(`[data-link="${id}"]`)
-);
+); //동일하게 navItems에 할당
 
-let selectedNavIndex = 0;
+let selectedNavIndex = 0; //현재 선택된 인덱스와 메뉴요소 저장
 let selectedNavItem = navItems[0];
-
 function selectNavItem(selected) {
     selectedNavItem.classList.remove('active');
     selectedNavItem = selected;
@@ -138,10 +138,17 @@ const observerCallback = (entries, observer) => {
                 } else {
                     selectedNavIndex = index - 1;
                 }
-
             }
         });
     };
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 sections.forEach(section => observer.observe(section));
+
+window.addEventListener('wheel', () => { //스크롤 위치가 제일 위 or 아래일때 처리
+    if (window.scrollY === 0) {
+        selectedNavIndex = 0;
+    } else if (window.scrollY + window.innerHeight === document.body.clientHeight) {
+        selectedNavIndex = navItems.length-1;
+    }
+    selectNavItem(navItems[selectedNavIndex]); //중간
