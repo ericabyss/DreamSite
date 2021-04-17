@@ -152,5 +152,5 @@ window.addEventListener('wheel', () => { //스크롤 위치가 제일 위 or 아
     } else if (window.scrollY + window.innerHeight === document.body.clientHeight) {
         selectedNavIndex = navItems.length-1;
     }
-    selectNavItem(navItems[selectedNavIndex]);//중간
+    selectNavItem(navItems[selectedNavIndex]);//중간위치일 떄
 });
