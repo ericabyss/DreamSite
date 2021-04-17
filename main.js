@@ -21,8 +21,8 @@ navbarMenu.addEventListener('click', event => {
         return;
     }
     navbarMenu.classList.remove('open');
-    scrollIntoView(link);
-    selectNavItem(target);
+    scrollIntoView(link); //link 받아오기
+    selectNavItem(target); //target 받아오기
 }); 
 
 // Navbar toggle button for small screen
@@ -89,8 +89,6 @@ workBtnContainer.addEventListener('click', (e) => {
     }, 300);
 
 });
-
-
 
 // 1. 모든 섹션 요소들과 메뉴 아이템들을 가지고 온다.
 // 2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다.
