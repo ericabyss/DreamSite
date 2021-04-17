@@ -146,7 +146,7 @@ const observerCallback = (entries, observer) => { //observer?
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 sections.forEach(section => observer.observe(section));
 
-window.addEventListener('wheel', () => { //스크롤 위치가 제일 위 or 아래일때 처리
+window.addEventListener('wheel', () => { //스크롤 위치가 제일 위 or 아래일때 처리 , scroll이 아닌 wheel로 처리
     if (window.scrollY === 0) {
         selectedNavIndex = 0;
     } else if (window.scrollY + window.innerHeight === document.body.clientHeight) {
