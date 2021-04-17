@@ -136,7 +136,7 @@ const observerCallback = (entries, observer) => {
                 const index = sectionIds.indexOf(`#${entry.target.id}`);
                 // 스크롤링이 아래로 되어서 페이지가 올라옴.
                 //다음에 할당되는 index를 selectedIndex로 할당함
-                if (entry.boundingClientRect.y < 0) {
+                if (entry.boundingClientRect.y < 0) { //y축을 기점으로 
                     selectedNavIndex = index + 1;
                 } else {
                     selectedNavIndex = index - 1;
